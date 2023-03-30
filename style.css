@@ -894,9 +894,21 @@ html.no-banner.toolbar-blur #navbar-main.navbar-no-blur {
 	background-size: cover;
 }
 .banner-container {
+	display: flex;
 	height: calc(40vh - 120px) !important;
+	justify-content: center; 
+  	align-items: center;
 }
-.banner-title {
+.banner-avatar-container {
+}
+.banner-avatar {
+	width: 215px; 
+	height: 215px;
+	border-radius: 50%; 
+	object-fit: cover; 
+	object-position: center center;
+}
+/* .banner-title {
 	font-size: 1.8em;
 	vertical-align: middle;
 	position: absolute;
@@ -904,6 +916,9 @@ html.no-banner.toolbar-blur #navbar-main.navbar-no-blur {
 	transform: translateY(-50%);
 	width: 100%;
 	left: 0;
+} */
+.banner-title {
+	font-size: 1.8em;
 }
 .banner-subtitle {
 	margin-top: 10px;

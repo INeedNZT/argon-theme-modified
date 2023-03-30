@@ -415,15 +415,23 @@
 	</div>
 
 	<?php
+		$banner_avatar = get_option('argon_banner_avatar'); 
 		$banner_title = get_option('argon_banner_title') == '' ? get_bloginfo('name') : get_option('argon_banner_title');
 		$enable_banner_title_typing_effect = get_option('argon_enable_banner_title_typing_effect') != 'true' ? "false" : get_option('argon_enable_banner_title_typing_effect');
 	?>
-	<div id="banner_container" class="banner-container container text-center">
+	<div id="banner_container" class="banner-container container text-center flex-wrap">
+		
+		<?php if ($banner_avatar != ""){?>
+			<div class="banner-avatar-container col-md-3">
+				<img class="rounded-circle banner-avatar" src="<?php echo $banner_avatar ?>" alt="">
+			</div>
+		<?php }?>
+		
 		<?php if ($enable_banner_title_typing_effect != "true"){?>
-			<div class="banner-title text-white"><span class="banner-title-inner"><?php echo apply_filters('argon_banner_title_html', $banner_title); ?></span>
+			<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>"><span class="banner-title-inner"><?php echo apply_filters('argon_banner_title_html', $banner_title); ?></span>
 			<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span class="banner-subtitle d-block">' . get_option('argon_banner_subtitle') . '</span>'; ?></div>
 		<?php } else {?>
-			<div class="banner-title text-white" data-interval="<?php echo get_option('argon_banner_typing_effect_interval', 100); ?>"><span data-text="<?php echo $banner_title; ?>" class="banner-title-inner">&nbsp;</span>
+			<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>" data-interval="<?php echo get_option('argon_banner_typing_effect_interval', 100); ?>"><span data-text="<?php echo $banner_title; ?>" class="banner-title-inner">&nbsp;</span>
 			<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span data-text="' . get_option('argon_banner_subtitle') . '" class="banner-subtitle d-block">&nbsp;</span>'; ?></div>
 		<?php }?>
 	</div>
