@@ -420,19 +420,20 @@
 		$enable_banner_title_typing_effect = get_option('argon_enable_banner_title_typing_effect') != 'true' ? "false" : get_option('argon_enable_banner_title_typing_effect');
 	?>
 	<div id="banner_container" class="banner-container container text-center flex-wrap">
-		
-		<?php if ($banner_avatar != ""){?>
-			<div class="banner-avatar-container col-md-3">
-				<img class="rounded-circle banner-avatar" src="<?php echo $banner_avatar ?>" alt="">
+		<?php if ($banner_avatar != "" && is_home()){?>
+			<div id="banner_avatar_container" class="col-md-3">
+				<div class="rounded-circle banner-avatar high-light shadow-sm" style='background: url("<?php echo $banner_avatar ?>")' alt="" draggable="false"></div>
 			</div>
 		<?php }?>
 		
-		<?php if ($enable_banner_title_typing_effect != "true"){?>
-			<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>"><span class="banner-title-inner"><?php echo apply_filters('argon_banner_title_html', $banner_title); ?></span>
-			<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span class="banner-subtitle d-block">' . get_option('argon_banner_subtitle') . '</span>'; ?></div>
-		<?php } else {?>
-			<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>" data-interval="<?php echo get_option('argon_banner_typing_effect_interval', 100); ?>"><span data-text="<?php echo $banner_title; ?>" class="banner-title-inner">&nbsp;</span>
-			<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span data-text="' . get_option('argon_banner_subtitle') . '" class="banner-subtitle d-block">&nbsp;</span>'; ?></div>
+		<?php if ($banner_title != "--hidden--"){?>
+			<?php if ($enable_banner_title_typing_effect != "true"){?>
+				<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>"><span class="banner-title-inner"><?php echo apply_filters('argon_banner_title_html', $banner_title); ?></span>
+				<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span class="banner-subtitle d-block">' . get_option('argon_banner_subtitle') . '</span>'; ?></div>
+			<?php } else {?>
+				<div class="banner-title text-white <?php if ($banner_avatar != "") {echo "col-md-8";} ?>" data-interval="<?php echo get_option('argon_banner_typing_effect_interval', 100); ?>"><span data-text="<?php echo $banner_title; ?>" class="banner-title-inner">&nbsp;</span>
+				<?php echo get_option('argon_banner_subtitle') == '' ? '' : '<span data-text="' . get_option('argon_banner_subtitle') . '" class="banner-subtitle d-block">&nbsp;</span>'; ?></div>
+			<?php }?>
 		<?php }?>
 	</div>
 	<?php if (get_option('argon_banner_background_url') != '') { ?>

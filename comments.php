@@ -121,7 +121,7 @@
 					<div class="form-group">
 						<div class="input-group input-group-alternative mb-4">
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
 							</div>
 							<input id="post_comment_name" class="form-control" placeholder="<?php _e('昵称', 'argon');?>" type="text" name="author" value="<?php if (is_user_logged_in()) {echo (wp_get_current_user() -> user_login);} else {echo htmlspecialchars($current_commenter['comment_author']);} ?>">
 						</div>
@@ -131,7 +131,7 @@
 					<div class="form-group">
 						<div class="input-group input-group-alternative mb-4">
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+								<span class="input-group-text"><i class="fa <?php if ($enable_qq_avatar == 'true'){echo "fa-qq";} else {echo "fa-envelope";} ?>"></i></span>
 							</div>
 							<input id="post_comment_email" class="form-control" placeholder="<?php _e('邮箱', 'argon');?><?php if ($enable_qq_avatar == 'true'){echo __(' / QQ 号', 'argon');} ?>" type="email" name="email" value="<?php if (is_user_logged_in()) {echo (wp_get_current_user() -> user_email);} else {echo htmlspecialchars($current_commenter['comment_author_email']);} ?>">
 						</div>

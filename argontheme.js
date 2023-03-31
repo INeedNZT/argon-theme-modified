@@ -1813,7 +1813,7 @@ if ($("html").hasClass("banner-as-cover")){
 	}).observe(document.querySelector("#primary"), {
 		'childList': true
 	});
-	$(".cover-scroll-down").on("click" , function(){
+	$(".cover-scroll-down, #banner_avatar_container").on("click" , function(){
 		gotoHash("#content", 600, 'easeOutCirc');
 		$("#content").focus();
 	});

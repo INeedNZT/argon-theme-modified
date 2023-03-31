@@ -381,7 +381,7 @@ function themeoptions_page(){
 						<th><label><?php _e('Banner 标题', 'argon');?></label></th>
 						<td>
 							<input type="text" class="regular-text" name="argon_banner_title" value="<?php echo get_option('argon_banner_title'); ?>"/>
-							<p class="description"><?php _e('留空则显示博客名称', 'argon');?></p>
+							<p class="description"><?php _e('留空则显示博客名称，输入 <code>--hidden--</code> 可以隐藏标题', 'argon');?></p>
 						</td>
 					</tr>
 					<tr>
@@ -1833,7 +1833,7 @@ window.pjaxLoaded = function(){
 		<button id="headindex_toggler" onclick="$('#headindex_box').toggleClass('folded');"><?php _e('收起', 'argon');?></button>
 		<div id="headindex"></div>
 	</div>
-	<div id="scroll_navigation"><button onclick="$('body,html').animate({scrollTop: 0}, 300);"><?php _e('到顶部', 'argon');?></button><button onclick="$('body,html').animate({scrollTop: $(document).height()-$(window).height()+10}, 300);"><?php _e('到底部', 'argon');?></button></div>
+	<div id="scroll_navigation"><button onclick="$('#submit').click();">保存</button><button onclick="$('body,html').animate({scrollTop: 0}, 300);"><?php _e('到顶部', 'argon');?></button><button onclick="$('body,html').animate({scrollTop: $(document).height()-$(window).height()+10}, 300);"><?php _e('到底部', 'argon');?></button></div>
 	<div id="exported_settings_json_box" class="closed"><div><?php _e('请复制并保存导出后的 JSON', 'argon');?></div><textarea id="exported_settings_json" readonly="true" onclick="$(this).select();"></textarea><div style="width: 100%;margin: auto;margin-top: 15px;cursor: pointer;user-select: none;" onclick="$('#exported_settings_json_box').addClass('closed');"><?php _e('确定', 'argon');?></div></div>
 	<style>
 		.radio-with-img {
