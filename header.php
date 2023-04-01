@@ -326,24 +326,28 @@
 								$output .= "\n$indent</div>\n";
 							}
 							public function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+								$classes = "";
+								foreach ($object->classes as $class) {
+									$classes .= $class . " ";
+								}
 								if ($depth == 0){
 									if ($args -> walker -> has_children == 1){
 										$output .= "\n
 										<li class='nav-item dropdown'>
-											<a href='" . $object -> url . "' class='nav-link' data-toggle='dropdown' no-pjax onclick='return false;' title='" . $object -> description . "'>
+											<a href='" . $object -> url . "' class='nav-link " .$classes. "' data-toggle='dropdown' no-pjax onclick='return false;' rel='" . $object -> xfn . "' title='" . $object -> description . "'>
 										  		<i class='ni ni-book-bookmark d-lg-none'></i>
 												<span class='nav-link-inner--text'>" . $object -> title . "</span>
 										  </a>";
 									}else{
 										$output .= "\n
 										<li class='nav-item'>
-											<a href='" . $object -> url . "' class='nav-link' target='" . $object -> target . "' title='" . $object -> description . "'>
+											<a href='" . $object -> url . "' class='nav-link " .$classes. "' target='" . $object -> target . "' rel='" . $object -> xfn . "' title='" . $object -> description . "'>
 										  		<i class='ni ni-book-bookmark d-lg-none'></i>
 												<span class='nav-link-inner--text'>" . $object -> title . "</span>
 										  </a>";
 									}
 								}else if ($depth == 1){
-									$output .= "<a href='" . $object -> url . "' class='dropdown-item' target='" . $object -> target . "' title='" . $object -> description . "'>" . $object -> title . "</a>";
+									$output .= "<a href='" . $object -> url . "' class='dropdown-item " .$classes. "' target='" . $object -> target . "' rel='" . $object -> xfn . "' title='" . $object -> description . "'>" . $object -> title . "</a>";
 								}
 							}
 							public function end_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
@@ -420,7 +424,7 @@
 		$enable_banner_title_typing_effect = get_option('argon_enable_banner_title_typing_effect') != 'true' ? "false" : get_option('argon_enable_banner_title_typing_effect');
 	?>
 	<div id="banner_container" class="banner-container container text-center flex-wrap">
-		<?php if ($banner_avatar != "" && is_home()){?>
+		<?php if ($banner_avatar != ""){?>
 			<div id="banner_avatar_container" class="col-md-3">
 				<div class="rounded-circle banner-avatar high-light shadow-sm" style='background: url("<?php echo $banner_avatar ?>")' alt="" draggable="false"></div>
 			</div>
