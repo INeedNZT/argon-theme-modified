@@ -740,10 +740,10 @@ msgstr "Enabled"
 
 #: settings.php:113
 msgid ""
-"开启后，主题色将会全局沉浸。</br>页面背景、卡片及页面上的其它元素会变为沉浸式"
+"开启后，主题色将会全局沉浸。<br/>页面背景、卡片及页面上的其它元素会变为沉浸式"
 "主题色（气氛色）。类似 Material You。"
 msgstr ""
-"If turn it on, the theme color will be globally immersed. </br>The "
+"If turn it on, the theme color will be globally immersed. <br/>The "
 "background, cards, and other elements on the page change to the immersive "
 "theme color. Just like Material You."
 
@@ -1367,7 +1367,7 @@ msgstr "First Line"
 msgid "拖动来自定义文章 Meta 信息的显示和顺序"
 msgstr ""
 "Drag to customize the display and order of the meta information of the "
-"article."
+"article"
 
 #: settings.php:631 settings.php:791 settings.php:875
 msgid "发布时间"
@@ -1471,11 +1471,11 @@ msgstr "Footnote List Title"
 
 #: settings.php:728
 msgid ""
-"脚注列表显示在文末，在文章中有脚注的时候会显示。</br>使用 <code>ref</code> 短"
+"脚注列表显示在文末，在文章中有脚注的时候会显示。<br/>使用 <code>ref</code> 短"
 "代码可以在文中插入脚注。"
 msgstr ""
 "The footnotes list is shown at the end of the post, and is displayed when "
-"there are footnotes in the article. </br> Use the <code>ref</code> shortcode "
+"there are footnotes in the article. <br/> Use the <code>ref</code> shortcode "
 "to insert footnotes into the post."
 
 #: settings.php:731 template-parts/share.php:53
@@ -1675,7 +1675,7 @@ msgstr ""
 #: settings.php:888
 msgid "表示文章修改时间与当前时间的差距（单位: 天）。"
 msgstr ""
-"means the gap between the modify time of the article and the current time,"
+"means the gap between the modify time of the article and the current time (Unit: Day)."
 
 #: settings.php:891
 msgid "归档页面"
@@ -2461,10 +2461,10 @@ msgid "启用，隐藏说说分类"
 msgstr "Enable, hide essays checkbox"
 
 #: settings.php:1600
-msgid "开启后，将会在搜索结果界面显示一个过滤器，支持搜索说说"
+msgid "开启后，将会在搜索结果界面显示一个过滤器，支持搜索说说及其他类型文章"
 msgstr ""
-"After enabling, a filter will be displayed on the search results page , "
-"which supports search essays"
+"After enabling, a filter will be displayed on the search results page "
+"which supports search essays and other types of article"
 
 #: settings.php:1604
 msgid "是否修正时区错误"
@@ -2801,6 +2801,22 @@ msgstr "Email notification of comment #"
 #: unsubscribe-comment-mailnotice.php:30
 msgid " 的邮件通知<br>该评论下有新回复时您将不会再收到通知"
 msgstr " is unsubscribed successfully."
+
+#: settings.php
+msgid "保存"
+msgstr "Save"
+
+#: settings.php
+msgid "Banner 头像"
+msgstr "Banner Avatar"
+
+#: settings.php
+msgid "显示在 Banner 左侧，留空则不显示"
+msgstr "Show on the left side of banner title, if this option is empty, it will not show."
+
+#: settings.php
+msgid "拖动来自定义启用的过滤器，单击来切换默认勾选状态"
+msgstr "Drag to customize the enabled filter, click to toggle the default check state"
 
 #~ msgid "自动折叠顶栏"
 #~ msgstr "Auto Fold Toolbar"

@@ -734,10 +734,10 @@ msgstr "開啟"
 
 #: settings.php:113
 msgid ""
-"开启后，主题色将会全局沉浸。</br>页面背景、卡片及页面上的其它元素会变为沉浸"
+"开启后，主题色将会全局沉浸。<br/>页面背景、卡片及页面上的其它元素会变为沉浸"
 "式主题色（气氛色）。类似 Material You。"
 msgstr ""
-"開啟後，主題色將會全局沉浸。 </br>頁面背景、卡片及頁面上的其它元素會變為沈浸"
+"開啟後，主題色將會全局沉浸。 <br/>頁面背景、卡片及頁面上的其它元素會變為沈浸"
 "式主題色（氣氛色）。類似 Material You。"
 
 #: settings.php:124
@@ -1422,10 +1422,10 @@ msgstr "引用列表標題"
 
 #: settings.php:728
 msgid ""
-"脚注列表显示在文末，在文章中有脚注的时候会显示。</br>使用 <code>ref</code> "
+"脚注列表显示在文末，在文章中有脚注的时候会显示。<br/>使用 <code>ref</code> "
 "短代码可以在文中插入脚注。"
 msgstr ""
-"引用列表顯示在文末，在文章中有引用的時候會顯示。 </br>使用 <code>ref</code> "
+"引用列表顯示在文末，在文章中有引用的時候會顯示。 <br/>使用 <code>ref</code> "
 "短代碼可以在文中插入引用。"
 
 #: settings.php:731 template-parts/share.php:53
@@ -2361,8 +2361,8 @@ msgid "启用，隐藏说说分类"
 msgstr "啟用，隱藏說說分類"
 
 #: settings.php:1600
-msgid "开启后，将会在搜索结果界面显示一个过滤器，支持搜索说说"
-msgstr "開啟後，將會在搜索結果界面顯示一個過濾器，支持搜索說說"
+msgid "开启后，将会在搜索结果界面显示一个过滤器，支持搜索说说及其他类型文章"
+msgstr "開啟後，將會在搜索結果界面顯示一個過濾器，支持搜索說說及其他類型文章"
 
 #: settings.php:1604
 msgid "是否修正时区错误"
@@ -2696,6 +2696,22 @@ msgstr "您已成功取消訂閱評論 #"
 #: unsubscribe-comment-mailnotice.php:30
 msgid " 的邮件通知<br>该评论下有新回复时您将不会再收到通知"
 msgstr " 的郵件通知<br>該評論下有新回覆時您將不會再收到通知"
+
+#: settings.php
+msgid "保存"
+msgstr "儲存"
+
+#: settings.php
+msgid "Banner 头像"
+msgstr "Banner 大頭貼"
+
+#: settings.php
+msgid "显示在 Banner 左侧，留空则不显示"
+msgstr "顯示在 Banner 標題左側，留空則不顯示"
+
+#: settings.php
+msgid "拖动来自定义启用的过滤器，单击来切换默认勾选状态"
+msgstr "拖動來自定義啟用的過濾器，單擊來切換默認勾選狀態"
 
 #, fuzzy
 #~| msgid "显示"
