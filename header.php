@@ -327,27 +327,31 @@
 							}
 							public function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
 								$classes = "";
+								$download_link = false;
 								foreach ($object->classes as $class) {
+									if (trim($class) == 'download') {
+										$download_link = true;
+									}
 									$classes .= $class . " ";
 								}
 								if ($depth == 0){
 									if ($args -> walker -> has_children == 1){
 										$output .= "\n
 										<li class='nav-item dropdown'>
-											<a href='" . $object -> url . "' class='nav-link " .$classes. "' data-toggle='dropdown' no-pjax onclick='return false;' rel='" . $object -> xfn . "' title='" . $object -> description . "'>
+											<a href='" . $object -> url . "' class='nav-link " .$classes. "' data-toggle='dropdown' no-pjax onclick='return false;'" . ($download_link ? ' download' : '') . " rel='" . $object -> xfn . "' title='" . $object -> description . "'>
 										  		<i class='ni ni-book-bookmark d-lg-none'></i>
 												<span class='nav-link-inner--text'>" . $object -> title . "</span>
 										  </a>";
 									}else{
 										$output .= "\n
 										<li class='nav-item'>
-											<a href='" . $object -> url . "' class='nav-link " .$classes. "' target='" . $object -> target . "' rel='" . $object -> xfn . "' title='" . $object -> description . "'>
+											<a href='" . $object -> url . "' class='nav-link " .$classes. "' target='" . $object -> target . "'" . ($download_link ? ' download' : '') . " rel='" . $object -> xfn . "' title='" . $object -> description . "'>
 										  		<i class='ni ni-book-bookmark d-lg-none'></i>
 												<span class='nav-link-inner--text'>" . $object -> title . "</span>
 										  </a>";
 									}
 								}else if ($depth == 1){
-									$output .= "<a href='" . $object -> url . "' class='dropdown-item " .$classes. "' target='" . $object -> target . "' rel='" . $object -> xfn . "' title='" . $object -> description . "'>" . $object -> title . "</a>";
+									$output .= "<a href='" . $object -> url . "' class='dropdown-item " .$classes. "' target='" . $object -> target . "'" . ($download_link ? ' download' : '') . " rel='" . $object -> xfn . "' title='" . $object -> description . "'>" . $object -> title . "</a>";
 								}
 							}
 							public function end_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
