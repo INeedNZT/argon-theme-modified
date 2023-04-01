@@ -1142,7 +1142,7 @@ if (argonConfig.waterflow_columns != "1") {
 					timeout: 5000
 				});
 				//插入新评论
-				result.html = result.html.replace(/<img class='comment-sticker lazyload'(.*?)\/>/g, "").replace(/<(\/).noscript>/g, "");
+				result.html = result.html.replace(/<img class='comment-sticker(\ssm)?\slazyload'(.*?)\/>/g, "").replace(/<(\/).noscript>/g, "");
 				let parentID = result.parentID;
 				if (parentID == "" || parentID == null){
 					parentID = 0;
@@ -1292,7 +1292,7 @@ if (argonConfig.waterflow_columns != "1") {
 				}
 
 				//发送成功，替换原评论
-				result.new_comment = result.new_comment.replace(/<img class='comment-sticker lazyload'(.*?)\/>/g, "").replace(/<(\/).noscript>/g, "");		
+				result.new_comment = result.new_comment.replace(/<img class='comment-sticker(\ssm)?\slazyload'(.*?)\/>/g, "").replace(/<(\/).noscript>/g, "");		
 				$("#comment-" + editID + " .comment-item-text").html(result.new_comment);
 				$("#comment-" + editID + " .comment-item-source").html(result.new_comment_source);
 				if ($("#comment-" + editID + " .comment-info .comment-edited").length == 0){

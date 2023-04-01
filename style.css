@@ -2653,6 +2653,9 @@ html.darkmode .comment-upvote {
 	transition-delay: 0s;
 	transform: none;
 }
+.comment-item-text .comment-sticker.sm {
+	max-height: 20px;
+}
 .comment-item-text .comment-sticker:active {
 	transition-delay: 0.3s;
 	transform: scale(2);
@@ -3148,6 +3151,9 @@ html.darkmode #post_comment.post-comment-force-privatemode-off .comment-post-pri
 	transition: filter 0.3s ease, transform 0.3s ease;
 	transition-delay: 0s;
 	background: var(--color-widgets);
+}
+.emotion-item.sm > img {
+	max-height: 48px;
 }
 .emotion-item.emotion-item-sticker:hover > img[src^="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nI"] {
 	filter: brightness(2);
