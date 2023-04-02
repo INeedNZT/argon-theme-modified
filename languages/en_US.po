@@ -2819,8 +2819,8 @@ msgid "Banner 头像"
 msgstr "Banner Avatar"
 
 #: settings.php
-msgid "显示在 Banner 左侧，留空则不显示"
-msgstr "Show on the left side of banner title, if this option is empty, it will not show."
+msgid "显示在 Banner 左侧，留空则不显示，仅支持全屏模式"
+msgstr "Show on the left side of banner title, if this option is empty, it will not show. Support full screen mode only"
 
 #: settings.php
 msgid "拖动来自定义启用的过滤器，单击来切换默认勾选状态"

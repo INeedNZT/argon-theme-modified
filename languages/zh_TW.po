@@ -2714,8 +2714,8 @@ msgid "Banner 头像"
 msgstr "Banner 大頭貼"
 
 #: settings.php
-msgid "显示在 Banner 左侧，留空则不显示"
-msgstr "顯示在 Banner 標題左側，留空則不顯示"
+msgid "显示在 Banner 左侧，留空则不显示，仅支持全屏模式"
+msgstr "顯示在 Banner 標題左側，留空則不顯示，僅支持全屏模式"
 
 #: settings.php
 msgid "拖动来自定义启用的过滤器，单击来切换默认勾选状态"

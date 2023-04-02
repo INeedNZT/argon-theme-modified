@@ -395,7 +395,7 @@ function themeoptions_page(){
 						<th><label><?php _e('Banner 头像', 'argon');?></label></th>
 						<td>
 							<input type="text" class="regular-text" name="argon_banner_avatar" value="<?php echo get_option('argon_banner_avatar'); ?>"/>
-							<p class="description"><?php _e('显示在 Banner 左侧，留空则不显示', 'argon');?></p>
+							<p class="description"><?php _e('显示在 Banner 左侧，留空则不显示，仅支持全屏模式', 'argon');?></p>
 						</td>
 					</tr>
 					<tr><th class="subtitle"><h3><?php _e('外观', 'argon');?></h3></th></tr>
