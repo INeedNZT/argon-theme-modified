@@ -129,6 +129,7 @@
 		var argonConfig = {
 			wp_path: "<?php echo $GLOBALS['wp_path']; ?>",
 			language: "<?php echo argon_get_locate(); ?>",
+			lang_home: "<?php if (function_exists('get_home_url')) {echo get_home_url();}else{echo '/';} ?>",
 			dateFormat: "<?php echo get_option('argon_dateformat', 'YMD'); ?>",
 			<?php if (get_option('argon_enable_zoomify') == 'true'){ ?>
 				zoomify: {

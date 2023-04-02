@@ -130,7 +130,7 @@
 							<nav class="site-state">
 								<div class="site-state-item site-state-posts">
 									<a <?php $archives_page_url = argon_archives_timeline_url(); echo (empty($archives_page_url) ? ' style="cursor: default;"' : 'href="' . $archives_page_url . '"');?>>
-										<span class="site-state-item-count"><?php echo wp_count_posts() -> publish; ?></span>
+										<span class="site-state-item-count"><?php if (function_exists('pll_current_language') && function_exists('pll_count_posts')){ echo pll_count_posts( pll_current_language() );}else{echo wp_count_posts() -> publish;}?></span>
 										<span class="site-state-item-name"><?php _e('文章', 'argon');?></span>
 									</a>
 								</div>

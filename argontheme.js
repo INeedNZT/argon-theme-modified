@@ -309,7 +309,7 @@ function searchPosts(word){
 		});
 	}else{
 		$.pjax({
-			url: argonConfig.wp_path + "?s=" + encodeURI(word)
+			url: argonConfig.lang_home + "?s=" + encodeURI(word)
 		});
 	}
 }
