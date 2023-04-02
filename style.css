@@ -2897,6 +2897,9 @@ html.darkmode .comment-edit-history-item {
 #post_comment {
 	margin-bottom: 25px;
 }
+#post_comment .hide-on-comment-editing input{
+	padding-left: 12px;
+}
 .post-comment-title {
 	font-size: 20px;
 }
