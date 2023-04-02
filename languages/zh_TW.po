@@ -2345,8 +2345,16 @@ msgid "开启后，长说说在预览状态下会被折叠，需要手动展开"
 msgstr "開啟後，長說說在預覽狀態下會被折疊，需要手動展開"
 
 #: settings.php:1591
-msgid "搜索结果类型过滤器"
-msgstr "搜索結果類型過濾器"
+msgid "搜索过滤器"
+msgstr "搜索過濾器"
+
+#: settings.php
+msgid "启用过滤器"
+msgstr "啟用過濾器"
+
+#: settings.php
+msgid "过滤器类型"
+msgstr "過濾器類型"
 
 #: settings.php:1596
 msgid "启用，默认不包括说说"

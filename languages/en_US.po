@@ -2445,8 +2445,16 @@ msgid "开启后，长说说在预览状态下会被折叠，需要手动展开"
 msgstr "After opening, essay that are too long will be collapsed"
 
 #: settings.php:1591
-msgid "搜索结果类型过滤器"
-msgstr "Search result type filter"
+msgid "搜索过滤器"
+msgstr "Search Filter"
+
+#: settings.php
+msgid "启用过滤器"
+msgstr "Enable Filter"
+
+#: settings.php
+msgid "过滤器类型"
+msgstr "Filter Types"
 
 #: settings.php:1596
 msgid "启用，默认不包括说说"
