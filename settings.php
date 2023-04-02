@@ -544,7 +544,7 @@ function themeoptions_page(){
 					<tr>
 						<th><label><?php _e('左侧栏作者简介', 'argon');?></label></th>
 						<td>
-							<input type="text" class="regular-text" name="argon_sidebar_author_description" value="<?php echo get_option('argon_sidebar_author_description'); ?>"/>
+							<input type="text" class="regular-text" name="argon_sidebar_author_description" value="<?php echo htmlspecialchars(get_option('argon_sidebar_author_description')); ?>"/>
 							<p class="description"><?php _e('留空则不显示', 'argon');?></p>
 						</td>
 					</tr>
@@ -908,7 +908,7 @@ function themeoptions_page(){
 							</select>
 							<?php _e('的方式提示', 'argon');?>
 							<br/>
-							<textarea type="text" name="argon_outdated_info_tip_content" rows="3" cols="100" style="margin-top: 15px;"><?php echo (get_option('argon_outdated_info_tip_content') == '' ? __('本文最后更新于 %date_delta% 天前，其中的信息可能已经有所发展或是发生改变。', 'argon') : get_option('argon_outdated_info_tip_content')); ?></textarea>
+							<textarea type="text" name="argon_outdated_info_tip_content" rows="3" cols="100" style="margin-top: 15px;"><?php echo (get_option('argon_outdated_info_tip_content') == '' ? __('本文最后更新于 %date_delta% 天前，其中的信息可能已经有所发展或是发生改变。', 'argon') : htmlspecialchars(get_option('argon_outdated_info_tip_content'))); ?></textarea>
 							<p class="description"><?php _e('天数为 -1 表示永不提示。', 'argon');?><br/><code>%date_delta%</code> <?php _e('表示文章发布/修改时间与当前时间的差距，', 'argon');?><code>%post_date_delta%</code> <?php _e('表示文章发布时间与当前时间的差距，', 'argon');?><code>%modify_date_delta%</code> <?php _e('表示文章修改时间与当前时间的差距（单位: 天）。', 'argon');?></p>
 						</td>
 					</tr>
@@ -2262,6 +2262,12 @@ function argon_update_themeoptions(){
 
 		//公告
 		argon_update_option_allow_tags('argon_sidebar_announcement');
+
+		// 过时文章提示
+		argon_update_option_allow_tags('argon_outdated_info_tip_content');
+
+		// 左侧作者栏介绍
+		argon_update_option_allow_tags('argon_sidebar_author_description');
 	}
 }
 argon_update_themeoptions();

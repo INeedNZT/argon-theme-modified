@@ -329,7 +329,9 @@ function get_additional_content_after_post(){
 		return "";
 	}
 	if ($res == ""){
-		$res = get_option("argon_additional_content_after_post");
+		if (function_exists('pll__')) {
+			$res = pll__(get_option("argon_additional_content_after_post"));
+		}
 	}
 	$res = str_replace("\n", "</br>", $res);
 	$res = str_replace("%url%", get_permalink($postID), $res);
@@ -2005,6 +2007,8 @@ function upvote_shuoshuo(){
 add_action('wp_ajax_upvote_shuoshuo' , 'upvote_shuoshuo');
 add_action('wp_ajax_nopriv_upvote_shuoshuo' , 'upvote_shuoshuo');
 //检测页面底部版权是否被修改
+// 在自定义footer中进行标注，并提及原始主题版权
+/* 
 function alert_footer_copyright_changed(){ ?>
 	<div class='notice notice-warning is-dismissible'>
 		<p><?php _e("警告：你可能修改了 Argon 主题页脚的版权声明，Argon 主题要求你至少保留主题的 Github 链接或主题的发布文章链接。", 'argon');?></p>
@@ -2017,6 +2021,7 @@ function check_footer_copyright(){
 	}
 }
 check_footer_copyright();
+*/
 //颜色计算
 function rgb2hsl($R,$G,$B){
 	$r = $R / 255;
@@ -2349,6 +2354,9 @@ function argon_get_post_outdated_info(){
 		$after = "</div>";
 	}
 	$content = get_option('argon_outdated_info_tip_content') == '' ? '本文最后更新于 %date_delta% 天前，其中的信息可能已经有所发展或是发生改变。' : get_option('argon_outdated_info_tip_content');
+	if (function_exists('pll__')) {
+		$content = pll__($content);
+	}
 	$delta = get_option('argon_outdated_info_days') == '' ? (-1) : get_option('argon_outdated_info_days');
 	if ($delta == -1){
 		$delta = 2147483647;
@@ -3011,7 +3019,8 @@ function get_reference_list(){
 		return "";
 	}
 	$res = "<div class='reference-list-container'>";
-	$res .= "<h3>" . (get_option('argon_reference_list_title') == "" ? __('参考', 'argon') : get_option('argon_reference_list_title')) . "</h3>";
+	// polylang插件来管理title，如果不为空值并且安装的话
+	$res .= "<h3>" . (get_option('argon_reference_list_title') == "" ? __('参考', 'argon') :argon_reference_list_title()) . "</h3>";
 	$res .= "<ol class='reference-list'>";
 		foreach ($post_references as $index => $ref) {
 			$res .= "<li id='ref_" . ($index + 1)  . "'><div>";
@@ -3088,7 +3097,25 @@ function init_nav_menus(){
 		'leftbar_friend_links' => __('左侧栏友情链接', 'argon')
 	));
 }
-
+/*注册polylang字符串，在每次主题加载设置完成后*/
+function init_ppl_register_string(){
+	if (function_exists('pll_register_string')) {
+		pll_register_string('toolbar_title', get_option('argon_toolbar_title') == '' ? get_bloginfo('name') : get_option('argon_toolbar_title'), 'argon');
+		pll_register_string('banner_title', get_option('argon_banner_title') == '' ? get_bloginfo('name') : get_option('argon_banner_title'), 'argon');
+		pll_register_string('banner_subtitle', get_option('argon_banner_subtitle'), 'argon');
+		pll_register_string('sidebar_banner_title', get_option('argon_sidebar_banner_title') == '' ? get_bloginfo('name') : get_option('argon_sidebar_banner_title'), 'argon');
+		pll_register_string('sidebar_banner_subtitle', get_option('argon_sidebar_banner_subtitle'), 'argon');
+		pll_register_string('sidebar_auther_name', get_option('argon_sidebar_auther_name') == '' ? get_bloginfo('name') : get_option('argon_sidebar_auther_name'), 'argon');
+		pll_register_string('sidebar_author_description', get_option('argon_sidebar_author_description'), 'argon', true);
+		pll_register_string('sidebar_announcement', get_option('argon_sidebar_announcement'), 'argon', true);
+		pll_register_string('reference_list_title', get_option('argon_reference_list_title'), 'argon');
+		pll_register_string('additional_content_after_post', get_option('argon_additional_content_after_post'), 'argon', true);
+		pll_register_string('outdated_info_tip_content', get_option('argon_outdated_info_tip_content') == '' ? '本文最后更新于 %date_delta% 天前，其中的信息可能已经有所发展或是发生改变。' : get_option('argon_outdated_info_tip_content'), 'argon', true);
+		pll_register_string('archives_timeline_url', get_option('argon_archives_timeline_url'), 'argon');
+		pll_register_string('footer_html', get_option('argon_footer_html'), 'argon', true);
+	}
+}
+add_action('after_setup_theme', 'init_ppl_register_string');
 //隐藏 admin 管理条
 //show_admin_bar(false);
 
@@ -3174,3 +3201,92 @@ function argon_login_page_style() {
 if (get_option('argon_enable_login_css') == 'true'){
 	add_action('login_head', 'argon_login_page_style');
 }
+
+function argon_toolbar_title() {
+	$toolbar_title = get_option('argon_toolbar_title') == '' ? get_bloginfo('name') : get_option('argon_toolbar_title');
+	if (function_exists('pll__')){
+		$toolbar_title = pll__($toolbar_title);
+	}
+	return $toolbar_title;
+}
+
+function argon_banner_title() {
+	$banner_title = get_option('argon_banner_title') == '' ? get_bloginfo('name') : get_option('argon_banner_title');
+	if (function_exists('pll__')){
+		$banner_title = pll__($banner_title);
+	}
+	return $banner_title;
+}
+
+function argon_banner_subtitle() {
+	$banner_subtitle = get_option('argon_banner_subtitle');
+	if (function_exists('pll__')){
+		$banner_subtitle = pll__($banner_subtitle);
+	}
+	return $banner_subtitle;
+}
+
+function argon_sidebar_banner_title() {
+	$sidebar_banner_title = get_option('argon_sidebar_banner_title') == '' ? get_bloginfo('name') : get_option('argon_sidebar_banner_title');
+	if (function_exists('pll__')){
+		$sidebar_banner_title = pll__($sidebar_banner_title);
+	}
+	return $sidebar_banner_title;
+}
+
+function argon_sidebar_banner_subtitle() {
+	$sidebar_banner_subtitle = get_option('argon_sidebar_banner_subtitle');
+	if (function_exists('pll__')){
+		$sidebar_banner_subtitle = pll__($sidebar_banner_subtitle);
+	}
+	return $sidebar_banner_subtitle;
+}
+
+function argon_sidebar_auther_name() {
+	$sidebar_auther_name = get_option('argon_sidebar_auther_name') == '' ? get_bloginfo('name') : get_option('argon_sidebar_auther_name');
+	if (function_exists('pll__')){
+		$sidebar_auther_name = pll__($sidebar_auther_name);
+	}
+	return $sidebar_auther_name;
+}
+
+function argon_sidebar_author_description() {
+	$sidebar_author_description = get_option('argon_sidebar_author_description');
+	if (function_exists('pll__')){
+		$sidebar_author_description = pll__($sidebar_author_description);
+	}
+	return $sidebar_author_description;
+}
+
+function argon_sidebar_announcement() {
+	$sidebar_announcement = get_option('argon_sidebar_announcement');
+	if (function_exists('pll__')){
+		$sidebar_announcement = pll__($sidebar_announcement);
+	}
+	return $sidebar_announcement;
+}
+
+function argon_reference_list_title() {
+	$reference_list_title = get_option('argon_reference_list_title');
+	if (function_exists('pll__')){
+		$reference_list_title = pll__($reference_list_title);
+	}
+	return $reference_list_title;
+}
+
+function argon_archives_timeline_url() {
+	$archives_timeline_url = get_option('argon_archives_timeline_url');
+	if (function_exists('pll__')){
+		$archives_timeline_url = pll__($archives_timeline_url);
+	}
+	return $archives_timeline_url;
+}
+
+function argon_footer_html() {
+	$footer_html = get_option('argon_footer_html');
+	if (function_exists('pll__')){
+		$footer_html = pll__($footer_html);
+	}
+	return $footer_html;
+}
+
