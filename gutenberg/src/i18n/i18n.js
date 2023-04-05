@@ -1,6 +1,7 @@
 let translation = {};
 
 translation['en_US'] = require('./en_US.js').translations;
+translation['zh_TW'] = require('./zh_TW.js').translations;
 
 export const __ = (text) => {
 	let lang = argon_language;

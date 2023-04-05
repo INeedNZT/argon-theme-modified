@@ -56,7 +56,7 @@ msgstr "本文評論已關閉"
 
 #: comments.php:76 settings.php:1290
 msgid "发送评论"
-msgstr "發怖評論"
+msgstr "發佈評論"
 
 #: comments.php:77
 msgid "编辑评论"
