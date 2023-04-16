@@ -27,5 +27,21 @@ export const translations = {
 	'+ 添加 Tab': '+ Add Tab',
 	'移除此项': 'Remove item',
 	'切换时的淡入动画': 'Fade animation when switching',
-	'Repo 描述将会显示在这里': 'Repo description will be displayed here.'
+	'Repo 描述将会显示在这里': 'Repo description will be displayed here.',
+
+	'哔哩哔哩': 'bilibili',
+	'粘贴至您希望显示的站点内容的链接。': 'Paste a link to the content you want to display on your site.',
+	'键入要在此嵌入的URL…': 'Enter URL to embed here…',
+	'嵌入': 'Embed',
+	'了解关于嵌入的更多内容': 'Learn more about embeds',
+	'抱歉，此内容不能被嵌入。': 'Sorry, this content could not be embedded.',
+	'重试': 'Try again',
+	'转换为': 'Convert to ',
+	'转换为链接': 'Convert to link',
+	'编辑URL': 'Edit URL',
+	'播放方式': 'Playback Mode',
+	'自动播放': 'Auto Play',
+	'弹幕播放': 'Danmaku Play',
+	'添加说明文字': 'Add caption',
+	'仅在H5中有效，Iframe中取决于用户弹幕设定': 'Only works in H5, depends on user danmaku settings'
 };

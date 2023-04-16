@@ -10,6 +10,14 @@ This is a modified version of the [Argon-Theme](https://github.com/solstice23/ar
 
 # 更新日志 / Update Logs
 
+## 20230416 v1.3.8
++ 新增Bilibili嵌入器 / Add Bilibili Embed widget
++ 嵌入器支持原生的功能，除此之外还增加了转化为其它嵌入器的功能 / The embed widget reproduces all the functions of the original embed and support transform to other embed additionally.
++ 支持两种模式进行嵌入 - H5和Iframe / Support two play mode - H5 and Iframe
++ 支持设置自动播放视频或者自动播放弹幕 / Support autoplay video or autoplay danmaku
++ 修复搜索功能，文章数量与Polylang不兼容问题 / Fix the incompatibility between search function and number of articles with Polylang
++ 样式调整 / Change some css styles
+
 ## 20230401 v1.3.7
 + 支持翻译插件Polylang，可以在翻译中设置注册字符串到其他语言 / Support trans plugin Polylnag, can customize register string bewteen multiple languages.
 + 新增b站的表情包 / Add bilibili emoji

@@ -175,9 +175,9 @@ function post_analytics_info(){
 		update_option('argon_has_inited', 'true');
 	}
 }
-if (get_option('argon_has_inited') != 'true'){
-	post_analytics_info();
-}
+// if (get_option('argon_has_inited') != 'true'){
+// 	post_analytics_info();
+// }
 //时区修正
 if (get_option('argon_enable_timezone_fix') == 'true'){
 	date_default_timezone_set('UTC');
@@ -3115,7 +3115,7 @@ function init_ppl_register_string(){
 		pll_register_string('footer_html', get_option('argon_footer_html'), 'argon', true);
 	}
 }
-add_action('after_setup_theme', 'init_ppl_register_string');
+add_action('plugins_loaded', 'init_ppl_register_string');
 //隐藏 admin 管理条
 //show_admin_bar(false);
 
@@ -3202,6 +3202,7 @@ if (get_option('argon_enable_login_css') == 'true'){
 	add_action('login_head', 'argon_login_page_style');
 }
 
+/*注册Polylang字符串*/
 function argon_toolbar_title() {
 	$toolbar_title = get_option('argon_toolbar_title') == '' ? get_bloginfo('name') : get_option('argon_toolbar_title');
 	if (function_exists('pll__')){
@@ -3290,3 +3291,76 @@ function argon_footer_html() {
 	return $footer_html;
 }
 
+/* 注册 REST API */
+add_action('rest_api_init', function() {
+	// 提供embed视频可用性验证服务（bilibili）
+	register_rest_route('api', '/embed/bilibili/video', array(
+		'methods' => 'GET',
+		'callback' => 'get_bilibili_video_info',
+	));
+});
+function get_bilibili_video_info( $request ) {
+	$result = new WP_REST_Response();
+    $bvid = $request['bvid'];
+	if($bvid == '') {
+		$result->set_status(400);
+		$result->set_data(array(
+			'error_code' => 400,
+			'description'  => 'the bvid parameter cant be empty.'
+		));
+	}else{
+		// 根据收集的野生bilibili api，获取b站视频信息，详见下面文档
+		// https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/video/info.md
+		$response = wp_remote_get('https://api.bilibili.com/x/web-interface/view?bvid=' . $bvid);
+		$status_code = wp_remote_retrieve_response_code($response);
+		if (is_wp_error($response)) {
+			$result->set_status(500);
+			$result->set_data(array(
+				'error_code' => 500,
+				'description'  => $response->get_error_message()
+			));
+		}elseif($status_code == 200) {
+			$body = json_decode(wp_remote_retrieve_body($response));
+			if ($body->code == 0) {
+				$result->set_status(200);
+			} else {
+				$result->set_status(403);
+			}
+			// 可能的error_code
+			// 0：成功
+			// -400：请求错误
+			// -403：权限不足
+			// -404：无视频
+			// 62002：稿件不可见
+			// 62004：稿件审核中
+			$result->set_data(array(
+				'error_code' => $body->code,
+				'data' => $body->data,
+				'description'  => 'bilibili api works.'
+			));
+		}else{
+			$status_code = empty($status_code) ? 404 : $status_code;
+			$result->set_status($status_code);
+			$result->set_data(array(
+				'error_code' => $status_code,
+				'description'  => 'cant access bilibili resources via api.'
+			));
+		}
+	}
+	return $result;
+}
+
+// 用wp的register_handler注册bilibili嵌入视频的渲染
+$wp_embed->register_handler(
+	'bilibili_embed_url',
+	'#^https:\/\/(www.bilibili.com\/blackboard\/html5mobileplayer.html|player.bilibili.com\/player.html)(\?[^"\s]+)+#i',
+	'argon_embed_handler_bilibili',
+	9
+);
+function argon_embed_handler_bilibili($matches, $attr, $url, $rawattr){
+	$output = sprintf(
+		'<iframe src="%1$s" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>',
+		esc_url($url),
+	);
+	return $output;
+}
