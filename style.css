@@ -5385,3 +5385,14 @@ figure.wp-block-embed {
 .wp-embed-aspect-1-2 .wp-block-embed__wrapper::before {
 	padding-top: 200%;
 }
+
+
+/* 移动端有特色图片不显示banner */
+@media screen and (max-width: 600px) {
+	section.banner.has-post-header-thumbnail{
+		height:0;
+	}
+	section.section-lg.has-post-header-thumbnail{
+		padding-bottom: 4rem;
+	}
+}
