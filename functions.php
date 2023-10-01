@@ -3097,6 +3097,8 @@ function init_nav_menus(){
 		'leftbar_friend_links' => __('左侧栏友情链接', 'argon')
 	));
 }
+
+add_action('init', 'init_ppl_register_string');
 /*注册polylang字符串，在每次主题加载设置完成后*/
 function init_ppl_register_string(){
 	if (function_exists('pll_register_string')) {
@@ -3115,7 +3117,6 @@ function init_ppl_register_string(){
 		pll_register_string('footer_html', get_option('argon_footer_html'), 'argon', true);
 	}
 }
-add_action('plugins_loaded', 'init_ppl_register_string');
 //隐藏 admin 管理条
 //show_admin_bar(false);
 
