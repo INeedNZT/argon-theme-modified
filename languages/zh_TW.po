@@ -1321,6 +1321,17 @@ msgstr "第一行"
 msgid "拖动来自定义文章 Meta 信息的显示和顺序"
 msgstr "拖移以自訂文章 Meta 資訊的顯示和排序"
 
+#: setting.php:690
+msgid "是否启用 真实浏览数"
+msgstr "是否啟用 實際瀏覽數"
+
+#: settings.php:697
+msgid "启用将会记录用户IP地址，重复点击不会计入浏览数。"
+"注意：启用后会导致旧版本主题下创建的文章的浏览数清零。"
+msgstr ""
+"啟用這個功能將會記錄使用者的IP位址，重複的點擊不會計入瀏覽次數。"
+"請注意：啟用後可能會導致在舊版本主題下建立的文章的瀏覽次數歸零。"
+
 #: settings.php:631 settings.php:791 settings.php:875
 msgid "发布时间"
 msgstr "發布時間"

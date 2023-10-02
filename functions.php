@@ -537,12 +537,28 @@ function set_post_views(){
 	}
 	$post_id = $post -> ID;
 	$count_key = 'views';
+	$ips_key = 'visited_ips';
 	$count = get_post_meta($post_id, $count_key, true);
+	$ips = get_post_meta($post_id, $ips_key, true);
+	$enable_visitor_views = get_option('argon_enable_visitor_views');
+
 	if (is_single() || is_page()) {
-		if ($count==''){
+		if ($count=='' || ($enable_visitor_views=='true' && $ips=='' )){
 			delete_post_meta($post_id, $count_key);
+			delete_post_meta($post_id, $ips_key);
 			add_post_meta($post_id, $count_key, '0');
+			add_post_meta($post_id, $ips_key, []);
 		} else {
+			if ($enable_visitor_views == 'true') {
+				$user_ip = $_SERVER['REMOTE_ADDR'];
+				// check whether user's ip is already recorded
+				if (in_array($user_ip, $ips)) {
+					return;
+				}
+				// otherwise record the ip and made count + 1
+				$ips[] = $user_ip;
+				update_post_meta($post_id, $ips_key, $ips);
+			}
 			update_post_meta($post_id, $count_key, $count + 1);
 		}
 	}
@@ -664,6 +680,8 @@ function get_article_meta($type){
 				</div>';
 	}
 	if ($type == 'views'){
+		// post-views-counter收费了
+		// 开源版本2015年停止维护
 		if (function_exists('pvc_get_post_views')){
 			$views = pvc_get_post_views(get_the_ID());
 		}else{

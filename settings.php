@@ -687,6 +687,16 @@ function themeoptions_page(){
 							});
 						</script>
 					</tr>
+					<tr><th><label><?php _e('是否启用 真实浏览数', 'argon');?></label></th>
+						<td>
+							<select name="argon_enable_visitor_views">
+								<?php $argon_enable_visitor_views = get_option('argon_enable_visitor_views'); ?>
+								<option value="false" <?php if ($argon_enable_visitor_views=='false'){echo 'selected';} ?>><?php _e('禁用', 'argon');?></option>
+								<option value="true" <?php if ($argon_enable_visitor_views=='true'){echo 'selected';} ?>><?php _e('启用', 'argon');?></option>
+							</select>
+							<p class="description"><?php _e('启用将会记录用户IP地址，重复点击不会计入浏览数。注意：启用后会导致旧版本主题下创建的文章的浏览数清零。', 'argon');?></p>
+						</td>
+					</tr>
 					<tr><th class="subtitle"><h4><?php _e('第二行', 'argon');?></h4></th></tr>
 					<tr>
 						<th><label><?php _e('显示字数和预计阅读时间', 'argon');?></label></th>
@@ -2211,6 +2221,7 @@ function argon_update_themeoptions(){
 		argon_update_option('argon_enable_login_css');
 		argon_update_option('argon_hide_categories');
 		argon_update_option('argon_article_meta');
+		argon_update_option('argon_enable_visitor_views');
 		argon_update_option('argon_fold_long_comments');
 		argon_update_option('argon_fold_long_shuoshuo');
 		argon_update_option('argon_first_image_as_thumbnail_by_default');

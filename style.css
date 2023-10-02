@@ -5386,10 +5386,10 @@ figure.wp-block-embed {
 	padding-top: 200%;
 }
 
-/* 移动端不显示banner */
+/* 手机端不显示banner */
 @media screen and (max-width: 600px) {
 	#content {
-		margin-top: -2rem;
+		margin-top: 0.5rem;
 	}
 
 	section.banner.section-lg {

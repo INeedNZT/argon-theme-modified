@@ -1369,6 +1369,18 @@ msgstr ""
 "Drag to customize the display and order of the meta information of the "
 "article"
 
+#: setting.php:690
+msgid "是否启用 真实浏览数"
+msgstr "Enable Visitor Views"
+
+#: settings.php:697
+msgid "启用将会记录用户IP地址，重复点击不会计入浏览数。"
+"注意：启用后会导致旧版本主题下创建的文章的浏览数清零。"
+msgstr ""
+"Enabling this feature will track user IP addresses, and repeated clicks "
+"will not be counted towards the view count. Note: Enabling this may reset "
+"the view count for articles created under older versions of the theme."
+
 #: settings.php:631 settings.php:791 settings.php:875
 msgid "发布时间"
 msgstr "Post time"
