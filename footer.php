@@ -1,7 +1,6 @@
 					<footer id="footer" class="site-footer card shadow-sm border-0">
 						<?php
-							echo get_option('argon_footer_html');
-							// echo argon_footer_html();
+							echo argon_footer_html();
 						?>
 					</footer>
 				</main>
