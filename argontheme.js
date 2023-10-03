@@ -512,6 +512,7 @@ if (argonConfig.waterflow_columns != "1") {
 	let $toggleAmoledMode = $('#blog_setting_toggle_darkmode_and_amoledarkmode');
 	let $toggleBlogSettings = $('#fabtn_toggle_blog_settings_popup');
 	let $goToComment = $('#fabtn_go_to_comment');
+	let $goToHome = $('#fabtn_go_to_home')
 
 	let $readingProgressBtn = $('#fabtn_reading_progress');
 	let $readingProgressBar = $('#fabtn_reading_progress_bar');
@@ -539,6 +540,12 @@ if (argonConfig.waterflow_columns != "1") {
 	$goToComment.on("click" , function(){
 		gotoHash("#post_comment" , 600);
 		$("#post_comment_content").focus();
+	});
+
+	$goToHome.on('click' , function(){
+		$.pjax({
+			url: argonConfig.lang_home
+		});
 	});
 
 	if (localStorage['Argon_fabs_Floating_Status'] == "left"){

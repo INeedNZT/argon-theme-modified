@@ -540,6 +540,9 @@
 	<button id="fabtn_back_to_top" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Back To Top" tooltip="<?php _e('回到顶部', 'argon'); ?>">
 		<span class="btn-inner--icon"><i class="fa fa-angle-up"></i></span>
 	</button>
+	<button id="fabtn_go_to_home" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <?php if (get_option('argon_fab_show_gotohome_button') != 'true') echo " style='display: none;'";?> aria-label="Back To Home" tooltip="<?php _e('回到首页', 'argon'); ?>">
+		<span class="btn-inner--icon"><i class="fa fa-home"></i></span>
+	</button>
 	<button id="fabtn_go_to_comment" class="btn btn-icon btn-neutral fabtn shadow-sm d-none" type="button" <?php if (get_option('argon_fab_show_gotocomment_button') != 'true') echo " style='display: none;'";?> aria-label="Comment" tooltip="<?php _e('评论', 'argon'); ?>">
 		<span class="btn-inner--icon"><i class="fa fa-comment-o"></i></span>
 	</button>

@@ -570,6 +570,17 @@ function themeoptions_page(){
 						</td>
 					</tr>
 					<tr>
+						<th><label><?php _e('显示首页按钮', 'argon');?></label></th>
+						<td>
+							<select name="argon_fab_show_gotohome_button">
+							<?php $argon_fab_show_gotohome_button = get_option('argon_fab_show_gotohome_button'); ?>
+								<option value="true" <?php if ($argon_fab_show_gotohome_button=='true'){echo 'selected';} ?>><?php _e('显示', 'argon');?></option>
+								<option value="false" <?php if ($argon_fab_show_gotohome_button=='false'){echo 'selected';} ?>><?php _e('不显示', 'argon');?></option>
+							</select>
+							<p class="description"><?php _e('是否在浮动操作按钮栏中显示首页按钮。点击按钮跳转回首页', 'argon');?></p>
+						</td>
+					</tr>
+					<tr>
 						<th><label><?php _e('显示夜间模式切换按钮', 'argon');?></label></th>
 						<td>
 							<select name="argon_fab_show_darkmode_button">
@@ -2165,6 +2176,7 @@ function argon_update_themeoptions(){
 		argon_update_option('argon_disable_pjax_animation');
 		argon_update_option('argon_fab_show_darkmode_button');
 		argon_update_option('argon_fab_show_settings_button');
+		argon_update_option('argon_fab_show_gotohome_button');
 		argon_update_option('argon_fab_show_gotocomment_button');
 		argon_update_option('argon_show_headindex_number');
 		argon_update_option('argon_theme_color');

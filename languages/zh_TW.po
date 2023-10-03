@@ -1245,6 +1245,14 @@ msgstr "懸浮操作按鈕位於頁面右下角 (或左下角)"
 msgid "显示设置按钮"
 msgstr "顯示設定按鈕"
 
+#: settings.php:573
+msgid "显示首页按钮"
+msgstr "顯示首頁按鈕"
+
+#: settings.php:580
+msgid "是否在浮动操作按钮栏中显示首页按钮。点击按钮跳转回首页"
+msgstr "是否在懸浮操作按鈕欄中顯示首頁按鈕。按下按鈕後跳轉回首頁。"
+
 #: settings.php:542 settings.php:554 settings.php:565 settings.php:625
 #: settings.php:672 settings.php:752 settings.php:904 settings.php:965
 #: settings.php:1462 settings.php:1574

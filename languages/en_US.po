@@ -1287,6 +1287,15 @@ msgstr ""
 msgid "显示设置按钮"
 msgstr "Show Settings Button"
 
+#: settings.php:573
+msgid "显示首页按钮"
+msgstr "Show Home Button"
+
+#: settings.php:580
+msgid "是否在浮动操作按钮栏中显示首页按钮。点击按钮跳转回首页"
+msgstr "Whether to display the home button in the floating action buttons bar. "
+"Click the home button to navigate back to the homepage."
+
 #: settings.php:542 settings.php:554 settings.php:565 settings.php:625
 #: settings.php:672 settings.php:752 settings.php:904 settings.php:965
 #: settings.php:1462 settings.php:1574
