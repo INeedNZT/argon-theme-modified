@@ -2617,12 +2617,12 @@ msgid "日"
 msgstr "日"
 
 #: template-parts/share.php:4 template-parts/share.php:61
-msgid "分享到微信"
-msgstr "分享到微信"
+msgid "分享到 微信"
+msgstr "分享到 微信"
 
 #: template-parts/share.php:9
-msgid "分享到豆瓣"
-msgstr "分享到豆瓣"
+msgid "分享到 豆瓣"
+msgstr "分享到 豆瓣"
 
 #: template-parts/share.php:14
 msgid "分享到 QQ"
@@ -2633,8 +2633,8 @@ msgid "分享到 QQ 空间"
 msgstr "分享到 QQ 空間"
 
 #: template-parts/share.php:24
-msgid "分享到微博"
-msgstr "分享到微博"
+msgid "分享到 微博"
+msgstr "分享到 微博"
 
 #: template-parts/share.php:32
 msgid "分享到 LinkedIn"
