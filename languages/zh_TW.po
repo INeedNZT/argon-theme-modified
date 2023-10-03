@@ -2636,6 +2636,10 @@ msgstr "分享到 QQ 空間"
 msgid "分享到微博"
 msgstr "分享到微博"
 
+#: template-parts/share.php:32
+msgid "分享到 LinkedIn"
+msgstr "分享到 LinkedIn"
+
 #: template-parts/share.php:30
 msgid "分享到 Facebook"
 msgstr "分享到 Facebook"

@@ -4086,6 +4086,9 @@ body.noscroll:before {
 #share .icon-weibo:before {
 	content: attr(tooltip);
 }
+#share .icon-linkedin:before {
+	content: attr(tooltip);
+}
 #share .icon-facebook:before {
 	content: attr(tooltip);
 }

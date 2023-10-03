@@ -2741,7 +2741,11 @@ msgstr "Share To Qzone"
 
 #: template-parts/share.php:24
 msgid "分享到微博"
-msgstr "Share to Weibo"
+msgstr "Share To Weibo"
+
+#: template-parts/share.php:32
+msgid "分享到 LinkedIn"
+msgstr "Share To LinkedIn"
 
 #: template-parts/share.php:30
 msgid "分享到 Facebook"
