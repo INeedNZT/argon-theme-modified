@@ -50,9 +50,6 @@ function argon_locate_filter($locate){
 	if (substr($locate, 0, 2) == 'en'){
 		return 'en_US';
 	}
-	if (substr($locate, 0, 2) == 'ru'){
-		return 'ru_RU';
-	}
 	return 'en_US';
 }
 function argon_get_locate(){
@@ -158,23 +155,23 @@ switch ($argon_update_source) {
 }
 
 //初次使用时发送安装量统计信息 (数据仅用于统计安装量)
-function post_analytics_info(){
-	if(function_exists('file_get_contents')){
-		$contexts = stream_context_create(
-			array(
-				'http' => array(
-					'method'=>"GET",
-					'header'=>"User-Agent: ArgonTheme\r\n"
-				)
-			)
-		);
-		$result = file_get_contents('http://api.solstice23.top/argon_analytics/index.php?domain=' . urlencode($_SERVER['HTTP_HOST']) . '&version='. urlencode($GLOBALS['theme_version']), false, $contexts);
-		update_option('argon_has_inited', 'true');
-		return $result;
-	}else{
-		update_option('argon_has_inited', 'true');
-	}
-}
+// function post_analytics_info(){
+// 	if(function_exists('file_get_contents')){
+// 		$contexts = stream_context_create(
+// 			array(
+// 				'http' => array(
+// 					'method'=>"GET",
+// 					'header'=>"User-Agent: ArgonTheme\r\n"
+// 				)
+// 			)
+// 		);
+// 		$result = file_get_contents('http://api.solstice23.top/argon_analytics/index.php?domain=' . urlencode($_SERVER['HTTP_HOST']) . '&version='. urlencode($GLOBALS['theme_version']), false, $contexts);
+// 		update_option('argon_has_inited', 'true');
+// 		return $result;
+// 	}else{
+// 		update_option('argon_has_inited', 'true');
+// 	}
+// }
 // if (get_option('argon_has_inited') != 'true'){
 // 	post_analytics_info();
 // }
