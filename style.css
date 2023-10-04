@@ -3,7 +3,7 @@ Theme Name: argon
 Author: INEEDNZT
 Author URI: http://jingming.blog
 Description: 轻盈、简洁、美观的 Wordpress 主题
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 两栏, 侧栏在左边, 浮动侧栏, 文章目录, 自适应, 夜间模式, 可自定义
@@ -2362,7 +2362,7 @@ html.darkmode .has-thumbnail .related-post-title.clamp {
 .post-donate img {
 	/*width: max-content;
 	width: -moz-max-content;*/
-	max-width: min(30vw, 500px);
+	max-width: min(30vw, 300px);
 }
 .post-donate .donate-qrcode {
 	width: max-content;
@@ -2370,7 +2370,7 @@ html.darkmode .has-thumbnail .related-post-title.clamp {
 	position: absolute;
 	left: 50%;
 	bottom: 100px;
-	padding: 25px;
+	padding: 10px;
 	z-index: 2;
 	transition: all 0.3s ease;
 	transform: translate(-50%, 10px) scale(0.9);
@@ -4105,6 +4105,143 @@ body.noscroll:before {
 	content: attr(tooltip);
 }
 
+/*Follow*/
+#follow_container {
+	height: 38px;
+	margin-bottom: 25px;
+	position: relative;
+}
+#follow,
+#follow_show {
+	width: max-content;
+	width: -moz-max-content;
+	transition: all 0.3s ease;
+}
+#follow {
+	margin-left: auto;
+	max-width: 100%;
+	transform: translateY(50px);
+	opacity: 0;
+	pointer-events: none;
+}
+#follow_show {
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: 1;
+}
+#follow_container.opened #follow {
+	transform: none;
+	opacity: 1;
+	pointer-events: unset;
+}
+#follow_container.opened #follow_show {
+	top: -50px;
+	opacity: 0;
+	pointer-events: none;
+}
+#follow_container.opened {
+	height: max-content;
+	height: -moa-max-content;
+	margin-bottom: 10px;
+	min-height: 38px;
+}
+#follow_container .btn {
+	height: 36px;
+	padding: 0 15px;
+	line-height: 36px;
+	margin-left: 5px;
+	margin-right: 0;
+	margin-bottom: 15px;
+	min-width: 50px;
+}
+#follow [class*=" icon-"] {
+	position: relative;
+}
+#follow [class*=" icon-"] .follow-qrcode {
+	position: absolute;
+	z-index: 2;
+	bottom: 50px;
+	right: 0px;
+	width: max-content;
+	width: -moz-max-content;
+	background: var(--color-widgets);
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	text-align: center;
+	padding: 10px 15px;
+	transition: visibility 0.25s, opacity 0.25s, transform 0.25s;
+	transform: translate(0, -10px) perspective(100px) rotateX(3deg);
+	opacity: 0;
+	border-radius: 3px;
+	pointer-events: none;
+}
+#follow [class*=" icon-"]:hover .follow-qrcode {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+#follow .follow-qrcode:before {
+	position: absolute;
+	z-index: 3;
+	top: calc(100% - 1em - 2px);
+	right: 35px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	content: "";
+	transform: rotate(-45deg) translateY(1rem);
+	border-radius: 0.2rem;
+	background: var(--color-widgets);
+}
+#follow .qrcode img {
+	max-width: min(80vw, 225px);
+	margin: auto;
+}
+#follow .follow-qrcode h4 {
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+#follow .follow-qrcode .help {
+	color: #000;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+#follow > a {
+	position: relative;
+}
+#follow > a:before,
+#follow_show:before {
+	pointer-events: none;
+	position: absolute;
+	top: -50px;
+	right: 0px;
+	line-height: 25px;
+	width: max-content;
+	width: -moz-max-content;
+	text-align: center;
+	font-weight: normal;
+	color: #fff;
+	background: #32325d;
+	padding: 3px 10px;
+	font-size: 14px;
+	border-radius: 3px;
+	z-index: 3;
+	transition: all 0.3s ease;
+	transform: translateY(5px);
+	opacity: 0;
+}
+#follow > a:hover:before,
+#follow_show:hover:before {
+	transform: translateY(0);
+	opacity: 0.7;
+}
+#follow_show:before {
+	content: attr(tooltip);
+	top: -40px;
+	height: max-content;
+	height: -moz-max-content;
+	text-transform: none;
+}
+
 /*Wordpress Adminbar*/
 #wpadminbar {
 	position: fixed !important;
@@ -5228,6 +5365,51 @@ html.darkmode.amoled-dark #content:after {
 		opacity: 0;
 	}
 	#share .icon-wechat:hover:before {
+		opacity: 1;
+	}
+
+	#follow [class*=" icon-"] .follow-qrcode {
+		position: fixed;
+		z-index: 2000;
+		left: 50%;
+		top: 50%;
+		bottom: unset;
+		right: unset;
+		width: max-content;
+		width: -moz-max-content;
+		background: var(--color-foreground);
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+		text-align: center;
+		padding: 0;
+		transition: visibility 0.25s, opacity 0.25s, transform 0.25s;
+		transform: translate(-50%, calc(-50% + 10px));
+		opacity: 0;
+		pointer-events: none;
+	}
+	#follow [class*=" icon-"]:hover .follow-qrcode {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+	#follow .follow-qrcode:before {
+		display: none;
+	}
+	#follow [class*=" icon-"]:before {
+		content: "";
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1999;
+		pointer-events: none;
+		transform: none;
+		background: rgba(0, 0, 0, 0.6);
+		opacity: 0;
+	}
+	#follow [class*=" icon-"]:hover:before {
 		opacity: 1;
 	}
 }

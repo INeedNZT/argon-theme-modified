@@ -787,6 +787,46 @@ function themeoptions_page(){
 							<p class="description"></p>
 						</td>
 					</tr>
+					<tr><th class="subtitle"><h3><?php _e('关注', 'argon');?></h3></th></tr>
+					<tr>
+						<th><label><?php _e('显示社交媒体关注按钮', 'argon');?></label></th>
+						<td>
+							<select name="argon_show_followbtn">
+								<?php $argon_show_followbtn = get_option('argon_show_followbtn'); ?>
+								<option value="false" <?php if ($argon_show_followbtn=='false'){echo 'selected';} ?>><?php _e('不显示', 'argon');?></option>
+								<option value="true" <?php if ($argon_show_followbtn=='true'){echo 'selected';} ?>><?php _e('显示', 'argon');?></option>
+							</select>
+							<p class="description"></p>
+						</td>
+					</tr>
+					<tr>
+						<th><label><?php _e('微信二维码名片链接', 'argon');?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="argon_wechat_qrcode_url" value="<?php echo get_option('argon_wechat_qrcode_url'); ?>"/>
+							<p class="description"><?php _e('微信二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示微信关注按钮，留空则不显示按钮', 'argon');?></p>
+						</td>
+					</tr>
+					<tr>
+						<th><label><?php _e('哔哩哔哩二维码名片链接', 'argon');?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="argon_bilibili_qrcode_url" value="<?php echo get_option('argon_bilibili_qrcode_url'); ?>"/>
+							<p class="description"><?php _e('哔哩哔哩二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示哔哩哔哩关注按钮，留空则不显示按钮', 'argon');?></p>
+						</td>
+					</tr>
+					<tr>
+						<th><label><?php _e('小红书二维码名片链接', 'argon');?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="argon_xiaohongshu_qrcode_url" value="<?php echo get_option('argon_xiaohongshu_qrcode_url'); ?>"/>
+							<p class="description"><?php _e('小红书二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示小红书关注按钮，留空则不显示按钮', 'argon');?></p>
+						</td>
+					</tr>
+					<tr>
+						<th><label><?php _e('抖音二维码名片链接', 'argon');?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="argon_tiktok_qrcode_url" value="<?php echo get_option('argon_tiktok_qrcode_url'); ?>"/>
+							<p class="description"><?php _e('抖音二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示抖音关注按钮，留空则不显示按钮', 'argon');?></p>
+						</td>
+					</tr>
 					<tr><th class="subtitle"><h3><?php _e('左侧栏文章目录', 'argon');?></h3></th></tr>
 					<tr>
 						<th><label><?php _e('在目录中显示序号', 'argon');?></label></th>
@@ -2167,6 +2207,11 @@ function argon_update_themeoptions(){
 		argon_update_option('argon_reading_speed_en');
 		argon_update_option('argon_reading_speed_code');
 		argon_update_option('argon_show_sharebtn');
+		argon_update_option('argon_show_followbtn');
+		argon_update_option('argon_wechat_qrcode_url');
+		argon_update_option('argon_bilibili_qrcode_url');
+		argon_update_option('argon_xiaohongshu_qrcode_url');
+		argon_update_option('argon_tiktok_qrcode_url');
 		argon_update_option('argon_enable_timezone_fix');
 		argon_update_option('argon_donate_qrcode_url');
 		argon_update_option('argon_hide_shortcode_in_preview');

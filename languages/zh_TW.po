@@ -1467,6 +1467,54 @@ msgstr "顯示大陸社交媒體"
 msgid "显示国外社交媒体"
 msgstr "顯示非大陸社交媒體"
 
+#: settings.php:790
+msgid "关注"
+msgstr "關注"
+
+#: follow.php:45
+msgid "关注我"
+msgstr "關注我"
+
+#: settings.php:792
+msgid "显示社交媒体关注按钮"
+msgstr "顯示社交媒體關注按鈕"
+
+#: settings.php:803
+msgid "微信二维码名片链接"
+msgstr "微信 QR Code 圖片連結"
+
+#: settings.php:806
+msgid "微信二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示微信关注按钮，留空则不显示按钮"
+msgstr ""
+"微信 QR Code 圖片連結，在顯示社交媒體關注按鈕的前提下，填寫後會顯示微信關注按鈕，留空則不顯示按鈕"
+
+#: settings.php:810
+msgid "哔哩哔哩二维码名片链接"
+msgstr "嗶哩嗶哩 QR Code 圖片連結"
+
+#: settings.php:813
+msgid "哔哩哔哩二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示哔哩哔哩关注按钮，留空则不显示按钮"
+msgstr ""
+"嗶哩嗶哩 QR Code 圖片連結，在顯示社交媒體關注按鈕的前提下，填寫後會顯示嗶哩嗶哩關注按鈕，留空則不顯示按鈕"
+
+#: settings.php:817
+msgid "小红书二维码名片链接"
+msgstr "小紅書 QR Code 圖片連結"
+
+#: settings.php:820
+msgid "小红书二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示小红书关注按钮，留空则不显示按钮"
+msgstr ""
+"小紅書 QR Code 圖片連結，在顯示社交媒體關注按鈕的前提下，填寫後會顯示小紅書關注按鈕，留空則不顯示按鈕"
+
+#: settings.php:824
+msgid "抖音二维码名片链接"
+msgstr "抖音 QR Code 圖片連結"
+
+#: settings.php:827
+msgid "抖音二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示抖音关注按钮，留空则不显示按钮"
+msgstr ""
+"抖音 QR Code 圖片連結，在顯示社交媒體關注按鈕的前提下，填寫後會顯示抖音關注按鈕，留空則不顯示按鈕"
+
 #: settings.php:745
 msgid "左侧栏文章目录"
 msgstr "左側欄文章目錄"

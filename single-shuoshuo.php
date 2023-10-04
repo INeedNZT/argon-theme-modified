@@ -16,6 +16,10 @@
 				get_template_part( 'template-parts/share' );
 			}
 
+			if (get_option("argon_show_followbtn") != 'false') {
+				get_template_part( 'template-parts/follow' );
+			}
+
 			if (comments_open() || get_comments_number()) {
 				comments_template();
 			}

@@ -1519,6 +1519,58 @@ msgstr "Chinese social media"
 msgid "显示国外社交媒体"
 msgstr "Non-Chinese social media"
 
+#: settings.php:790
+msgid "关注"
+msgstr "Follow"
+
+#: follow.php:45
+msgid "关注我"
+msgstr "Follow Me On"
+
+#: settings.php:792
+msgid "显示社交媒体关注按钮"
+msgstr "Show Social Media Follow Button"
+
+#: settings.php:803
+msgid "微信二维码名片链接"
+msgstr "Wechat QR code image link"
+
+#: settings.php:806
+msgid "微信二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示微信关注按钮，留空则不显示按钮"
+msgstr ""
+"After filling in, the wechat follow button will be displayed when social media " 
+"follow buttons are enabled, leave it blank to not display the wechat follow button"
+
+#: settings.php:810
+msgid "哔哩哔哩二维码名片链接"
+msgstr "Bilibili QR code image link"
+
+#: settings.php:813
+msgid "哔哩哔哩二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示哔哩哔哩关注按钮，留空则不显示按钮"
+msgstr ""
+"After filling in, the bilibili follow button will be displayed when social media " 
+"follow buttons are enabled, leave it blank to not display the bilibili follow button"
+
+#: settings.php:817
+msgid "小红书二维码名片链接"
+msgstr "Xiaohongshu QR code image link"
+
+#: settings.php:820
+msgid "小红书二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示小红书关注按钮，留空则不显示按钮"
+msgstr ""
+"After filling in, the xiaohongshu follow button will be displayed when social media " 
+"follow buttons are enabled, leave it blank to not display the xiaohongshu follow button"
+
+#: settings.php:824
+msgid "抖音二维码名片链接"
+msgstr "Tiktok QR code image link"
+
+#: settings.php:827
+msgid "抖音二维码图片链接，在显示社交媒体关注按钮的前提下，填写后会显示抖音关注按钮，留空则不显示按钮"
+msgstr ""
+"After filling in, the tiktok follow button will be displayed when social media " 
+"follow buttons are enabled, leave it blank to not display the tiktok follow button"
+
 #: settings.php:745
 msgid "左侧栏文章目录"
 msgstr "Catalog In Left Sidebar"
