@@ -2648,6 +2648,10 @@ msgstr "分享到 Facebook"
 msgid "分享到 Twitter"
 msgstr "分享到 Twitter"
 
+#: template-parts/share.php:47
+msgid "分享到 Google"
+msgstr "分享到 Google"
+
 #: template-parts/share.php:41
 msgid "分享到 Telegram"
 msgstr "分享到 Telegram"

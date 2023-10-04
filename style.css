@@ -4095,6 +4095,9 @@ body.noscroll:before {
 #share .icon-twitter:before {
 	content: attr(tooltip);
 }
+#share .icon-google:before {
+	content: attr(tooltip);
+}
 #share .icon-telegram:before {
 	content: attr(tooltip);
 }

@@ -30,7 +30,7 @@
 			</a>
 		<?php } if (get_option('argon_show_sharebtn') != 'domestic') { ?>
 		<a target="_blank" class="no-pjax icon-linkedin" tooltip="<?php _e('分享到 LinkedIn', 'argon'); ?>">
-			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+			<button class="btn btn-icon btn-primary" style="background: #2d64bc;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-linkedin"></i></span>
 			</button>
 		</a>
@@ -42,6 +42,11 @@
 		<a target="_blank" class="no-pjax icon-twitter" tooltip="<?php _e('分享到 Twitter', 'argon'); ?>">
 			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-google" tooltip="<?php _e('分享到 Google', 'argon'); ?>">
+			<button class="btn btn-icon btn-primary" style="background: #de5241;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-google"></i></span>
 			</button>
 		</a>
 		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=<?php echo urlencode(
