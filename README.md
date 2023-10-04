@@ -10,6 +10,16 @@ This is a modified version of the [Argon-Theme](https://github.com/solstice23/ar
 
 # 更新日志 / Update Logs
 
+## 20231004 v1.3.9
++ 支持对真实用户访问量的设置，检查用户的ip地址来避免重复点击增加的浏览量 / Support settings for real user traffic, checking the user's IP address to prevent duplicate clicks from increasing the view count
++ 支持可选赞赏功能，开启赞赏的功能下，文章可以选择是否显示赞赏按钮 / Support an optional donation feature. When the donation feature is enabled, articles can choose whether to display the donation button
++ 新增对bilibili/小红书/抖音关注的支持 / Add supports for following socail media as listed: bilibili, little red book and China tiktok
++ 新增回到主页的浏览小插件 / Add a floating action button widget for returning to the homepage
++ 修复Polylang没有注册成功的问题 / Fix the issue where Polylang did not register successfully
++ 调整样式手机端的文章显示（不显示banner）/ Adjust the mobile style for article display (without showing the banner)
++ 调整banner_avater闪光效果 / Adjust the shimmer effect for banner_avatar
++ 样式调整 / Change some css style
+
 ## 20230416 v1.3.8
 + 新增Bilibili嵌入器 / Add Bilibili Embed widget
 + 嵌入器支持原生的功能，除此之外还增加了转化为其它嵌入器的功能 / The embed widget reproduces all the functions of the original embed and support transform to other embed additionally.
