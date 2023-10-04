@@ -455,7 +455,7 @@
 	<?php } ?>
 	<?php if ($banner_size == 'fullscreen') { ?>
 		<div class="cover-scroll-down">
-			<i class="fa fa-angle-down" aria-hidden="true"></i>
+			<i class="fa fa-angle-down jump" aria-hidden="true"></i>
 		</div>
 	<?php } ?>
 </section>

@@ -5584,3 +5584,22 @@ figure.wp-block-embed {
 		align-self: baseline;
 	}
 }
+
+@keyframes jumpAnimation {
+	0%, 100% {
+	  transform: translateY(0px);
+	}
+	50% {
+	  transform: translateY(-20px);
+	}
+}
+
+.jump {
+	display: inline-block;  /* 为了能够使用transform属性 */
+	animation: jumpAnimation 1.5s infinite;  /* 持续0.5秒，无限循环 */
+	animation-timing-function: ease-in-out;
+}
+
+.jump:hover {
+	animation-play-state: paused; 
+}
