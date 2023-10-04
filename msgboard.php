@@ -39,6 +39,9 @@ Template Name: 留言板 (请打开页面的评论功能)
 #share_container {
 	display: none;
 }
+#follow_container {
+	display: none;
+}
 .comments-area .comments-title {
 	font-size: 0px;
 }

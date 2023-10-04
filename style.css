@@ -5410,6 +5410,9 @@ html.darkmode.amoled-dark #content:after {
 	#share_container {
 		display: none !important;
 	}
+	#follow_container {
+		display: none !important;
+	}
 	#primary {
 		width: 100% !important;
 	}
