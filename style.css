@@ -903,7 +903,12 @@ html.no-banner.toolbar-blur #navbar-main.navbar-no-blur {
 html.is-home #banner_avatar_container{
 	display: block;
 	transition: transform .35s ease-out;
-	opacity: 0.65;
+	opacity: 0.85;
+	/* 优化移动端体验，让头像容器不可选中 */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 html.is-home #banner_avatar_container:hover {
 	transform: scale(1.1);
@@ -922,8 +927,10 @@ html.is-home #banner_avatar_container:hover {
 	background-position: center center !important;
 	border: rgba(255,255,255,.5) 4px solid;
 	overflow: hidden;
+	/* 禁止移动端长按出现菜单 */
+	pointer-events:none;
 }
-.banner-avatar.high-light:after{
+#banner_avatar_container:hover .banner-avatar.high-light:after{
 	content: '';
 	position: absolute;
 	width: 100px;
@@ -931,36 +938,16 @@ html.is-home #banner_avatar_container:hover {
 	left: -100px;
 	top: 0px;
 	background: linear-gradient(90deg,transparent 20%,#fff);
-	clip-path: polygon(50% 0,100% 0%,50% 100%,0% 100%);
-	animation: highlight-effect 0.5s linear forwards;
-}
-.banner-avatar.high-light:hover:after{
-	content: '';
-	position: absolute;
-	width: 100px;
-	height: 100%;
-	left: -100px;
-	top: 0px;
-	background: linear-gradient(90deg,transparent 20%,#fff);
-	clip-path: polygon(50% 0,100% 0%,50% 100%,0% 100%);
-	animation: highlight-effect 0.5s linear forwards;
+	clip-path: polygon(50% 0%,100% 0%,50% 100%,0% 100%);
+	animation: highlight-effect 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @keyframes highlight-effect {
 	0% {
-		transform: translateX(-50px);
-	}
-
-	27.27% {
-		transform: translateX(35px);
-	}
-
-	72.73% {
-		transform: translateX(105px);
-	}
-
-	100% {
-		transform: translateX(225px);
-	}
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(225px);
+    }
 }
 .banner-title {
 	font-size: 1.8em;
@@ -5584,5 +5571,16 @@ figure.wp-block-embed {
 		height: 0;
 		margin-bottom: 0;
 		padding-bottom: 0;
+	}
+
+	html.is-home section.banner.section-lg{
+		/* 首页banner没有padding-top */
+		padding-top: 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.banner-title {
+		align-self: baseline;
 	}
 }
