@@ -439,6 +439,16 @@ msgid "单独控制该文章的过时信息显示。"
 msgstr ""
 "Separately control the display of outdated information for this article."
 
+#: functions.php:2212
+msgid "显示赞赏按钮"
+msgstr "Show Donation Button"
+
+#: functions.php:2221
+msgid "显示赞赏按钮需要设置全局赞赏二维码，单独禁用当前文章赞赏选择不使用"
+msgstr ""
+"To display the donation button, a global donation "
+"QR code needs to be set. To disable donation for a specific article, choose 'Do not use'."
+
 #: functions.php:2138 settings.php:765 settings.php:767
 msgid "文末附加内容"
 msgstr "Additional Content After Post"

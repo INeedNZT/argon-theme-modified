@@ -434,6 +434,15 @@ msgstr "應用"
 msgid "单独控制该文章的过时信息显示。"
 msgstr "為文章獨立配置過時資訊顯示。"
 
+#: functions.php:2212
+msgid "显示赞赏按钮"
+msgstr "顯示讚賞按鈕"
+
+#: functions.php:2221
+msgid "显示赞赏按钮需要设置全局赞赏二维码，单独禁用当前文章赞赏选择不使用"
+msgstr ""
+"顯示讚賞按鈕需設定全域讚賞 QR Code 圖片連結，單獨停用目前文章讚賞選擇不使用"
+
 #: functions.php:2138 settings.php:765 settings.php:767
 msgid "文末附加内容"
 msgstr "文末附加內容"

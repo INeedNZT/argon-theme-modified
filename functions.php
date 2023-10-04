@@ -2208,6 +2208,18 @@ function argon_meta_box_1(){
 			<button id="apply_show_post_outdated_info" type="button" class="components-button is-primary" style="height: 22px; display: none;"><?php _e("应用", 'argon');?></button>
 		</div>
 		<p style="margin-top: 15px;"><?php _e("单独控制该文章的过时信息显示。", 'argon');?></p>
+
+		<h4><?php _e("显示赞赏按钮", 'argon');?></h4>
+		<?php $argon_show_donate_btn = get_post_meta($post->ID, "argon_show_donate_btn", true);?>
+		<div style="display: flex;">
+			<select name="argon_show_donate_btn" id="argon_show_donate_btn">
+				<option value="default" <?php if ($argon_show_donate_btn=='default'){echo 'selected';} ?>><?php _e("跟随全局设置", 'argon');?></option>
+				<option value="false" <?php if ($argon_show_donate_btn=='false'){echo 'selected';} ?>><?php _e("不显示", 'argon');?></option>
+			</select>
+			<button id="apply_show_donate_btn" type="button" class="components-button is-primary" style="height: 22px; display: none;"><?php _e("应用", 'argon');?></button>
+		</div>
+		<p style="margin-top: 15px;"><?php _e("显示赞赏按钮需要设置全局赞赏二维码，单独禁用当前文章赞赏选择不使用", 'argon');?></p>
+
 		<h4><?php _e("文末附加内容", 'argon');?></h4>
 		<?php $argon_after_post = get_post_meta($post->ID, "argon_after_post", true);?>
 		<textarea name="argon_after_post" id="argon_after_post" rows="3" cols="30" style="width:100%;"><?php if (!empty($argon_after_post)){echo $argon_after_post;} ?></textarea>
@@ -2264,6 +2276,41 @@ function argon_meta_box_1(){
 					}
 				});
 			});
+
+			$("select[name=argon_show_donate_btn").change(function(){
+				$("#apply_show_donate_btn").css("display", "");
+			});
+			$("#apply_show_donate_btn").click(function(){
+				$("#apply_show_donate_btn").addClass("is-busy").attr("disabled", "disabled").css("opacity", "0.5");
+				$("#argon_show_donate_btn").attr("disabled", "disabled");
+				var data = {
+					action: 'update_post_meta_ajax',
+					argon_meta_box_nonce: $("#argon_meta_box_nonce").val(),
+					post_id: <?php echo $post->ID; ?>,
+					meta_key: 'argon_show_donate_btn',
+					meta_value: $("select[name=argon_show_donate_btn]").val()
+				};
+				$.ajax({
+					url: ajaxurl,
+					type: 'post',
+					data: data,
+					success: function(response) {
+						$("#apply_show_donate_btn").removeClass("is-busy").removeAttr("disabled").css("opacity", "1");
+						$("#argon_show_donate_btn").removeAttr("disabled");
+						if (response.status == "failed"){
+							showAlert("failed", "<?php _e("应用失败", 'argon');?>");
+							return;
+						}
+						$("#apply_show_donate_btn").css("display", "none");
+						showAlert("success", "<?php _e("应用成功", 'argon');?>");
+					},
+					error: function(response) {
+						$("#apply_show_donate_btn").removeClass("is-busy").removeAttr("disabled").css("opacity", "1");
+						$("#argon_show_donate_btn").removeAttr("disabled");
+						showAlert("failed", "<?php _e("应用失败", 'argon');?>");
+					}
+				});
+			});
 		</script>
 	<?php
 }
@@ -2296,6 +2343,7 @@ function argon_save_meta_data($post_id){
 	update_post_meta($post_id, 'argon_meta_simple', $_POST['argon_meta_simple']);
 	update_post_meta($post_id, 'argon_first_image_as_thumbnail', $_POST['argon_first_image_as_thumbnail']);
 	update_post_meta($post_id, 'argon_show_post_outdated_info', $_POST['argon_show_post_outdated_info']);
+	update_post_meta($post_id, 'argon_show_donate_btn', $_POST['argon_show_donate_btn']);
 	update_post_meta($post_id, 'argon_after_post', $_POST['argon_after_post']);
 	update_post_meta($post_id, 'argon_custom_css', $_POST['argon_custom_css']);
 }

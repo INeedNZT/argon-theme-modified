@@ -95,7 +95,8 @@
 		}
 	?>
 
-	<?php if (get_option("argon_donate_qrcode_url") != '') { ?>
+	<?php if (get_option("argon_donate_qrcode_url") != '' 
+				&& (get_post_meta($post->ID, "argon_show_donate_btn", true)!='false')) { ?>
 		<div class="post-donate">
 			<button class="btn donate-btn btn-danger"><?php _e('赞赏', 'argon');?></button>
 			<div class="donate-qrcode card shadow-sm bg-white">
