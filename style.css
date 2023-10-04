@@ -5184,7 +5184,7 @@ html.darkmode.amoled-dark #content:after {
 		display: flex;
 	}
 }
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 770px) {
 	/*文章分享的浮动二维码*/
 	#share .icon-wechat .wechat-qrcode {
 		position: fixed;
