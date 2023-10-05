@@ -20,7 +20,7 @@ This is a modified version of the [Argon-Theme](https://github.com/solstice23/ar
 + 调整banner_avater闪光效果 / Adjust the shimmer effect for banner_avatar
 + 首页封面下拉按钮添加跳动效果 / Add a junmping animation to the scroll down button on the cover page
 + 不显示留言板的关注按钮 / Hide the socail media follow button on the message board
-+ 样式调整 / Change some css style
++ 样式调整 / Change some css styles
 
 ## 20230416 v1.3.8
 + 新增Bilibili嵌入器 / Add Bilibili Embed widget
