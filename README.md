@@ -18,6 +18,8 @@ This is a modified version of the [Argon-Theme](https://github.com/solstice23/ar
 + 修复Polylang没有注册成功的问题 / Fix the issue where Polylang did not register successfully
 + 调整样式手机端的文章显示（不显示banner）/ Adjust the mobile style for article display (without showing the banner)
 + 调整banner_avater闪光效果 / Adjust the shimmer effect for banner_avatar
++ 首页封面下拉按钮添加跳动效果 / Add a junmping animation to the scroll down button on the cover page
++ 不显示留言板的关注按钮 / Hide the socail media follow button on the message board
 + 样式调整 / Change some css style
 
 ## 20230416 v1.3.8
