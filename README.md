@@ -10,6 +10,10 @@ This is a modified version of the [Argon-Theme](https://github.com/solstice23/ar
 
 # 更新日志 / Update Logs
 
+## 20231006 v1.3.9.1
++ 左边栏菜单支持非pjax跳转（添加css `no-pjax`）/ Fix Left menu pjax problem
++ 修复留言板翻译问题 / Fix translation issues in message board
+
 ## 20231004 v1.3.9
 + 支持对真实用户访问量的设置，检查用户的ip地址来避免重复点击增加的浏览量 / Support settings for real user traffic, checking the user's IP address to prevent duplicate clicks from increasing the view count
 + 支持可选赞赏功能，开启赞赏的功能下，文章可以选择是否显示赞赏按钮 / Support an optional donation feature. When the donation feature is enabled, articles can choose whether to display the donation button
